@@ -19,7 +19,7 @@ public class Pipeline3 {
 	public static void main(String[] args) throws UIMAException, IOException {
 		CollectionReader reader = createReader(DummyReader.class);
 
-		AnalysisEngine seg = createEngine(WhitespaceTokenizer.class);
+		AnalysisEngine seg = createEngine(BreakIteratorTokenizer.class);
 
 		AnalysisEngine writer = createEngine(DummyWriter.class);
 

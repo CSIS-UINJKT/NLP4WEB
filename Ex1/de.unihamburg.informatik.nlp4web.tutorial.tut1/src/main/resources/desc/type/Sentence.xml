@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
     <name>Sentence</name>
-    <description></description>
+    <description/>
     <version>1.0</version>
-    <vendor></vendor>
-  <types></types>
+    <vendor/>
+  <types>
+    <typeDescription>
+      <name>de.unihamburg.informatik.nlp4web.tutorial.tut3.type.Sentence</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  </types>
 </typeSystemDescription>
