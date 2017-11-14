@@ -1,5 +1,7 @@
 package de.unihamburg.informatik.nlp4web.tutorial.tut3.annotator;
 
+import java.util.StringTokenizer;
+
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.jcas.JCas;
@@ -13,15 +15,26 @@ public class WhitespaceTokenizer extends JCasAnnotator_ImplBase {
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
 		String document = jcas.getDocumentText();
-		int len = document.length(), start = 0, end = 0;
+//		int len = document.length(), start = 0, end = 0;
 
 		// The following code creates an annotation and adds it to
 		// the index (otherwise it is not added to the CAS). You'll need execute
 		// it for each token you find.
-		WSToken tokenAnnotation = new WSToken(jcas);
-		tokenAnnotation.setBegin(start);
-		tokenAnnotation.setEnd(end);
-		tokenAnnotation.addToIndexes();
+//		WSToken tokenAnnotation = new WSToken(jcas);
+//		tokenAnnotation.setBegin(start);
+//		tokenAnnotation.setEnd(end);
+//		tokenAnnotation.addToIndexes();
+		int start = 0;
+		StringTokenizer tok = new StringTokenizer(document);
+		while (tok.hasMoreTokens()) {
+
+			String token = tok.nextToken();
+			WSToken tokenAnnotation = new WSToken(jcas);
+			tokenAnnotation.setBegin(start);
+			tokenAnnotation.setEnd(start + token.length());
+			tokenAnnotation.addToIndexes();
+			start += token.length();
+		}
 	}
 
 }
