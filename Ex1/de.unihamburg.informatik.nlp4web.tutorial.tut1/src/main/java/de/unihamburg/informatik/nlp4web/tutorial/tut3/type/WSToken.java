@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Tue Nov 07 17:16:12 CET 2017
- * XML source: /home/alvin/Documents/Thesis Plan/NLPnWEB/Lecture 1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/types/WSToken.xml
+ * Updated by JCasGen Tue Nov 14 12:57:38 CET 2017
+ * XML source: /home/alvin/Documents/CSIS-UINJKT/NLP4WEB/Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/type/WSToken.xml
  * @generated */
 public class WSToken extends Annotation {
   /** @generated

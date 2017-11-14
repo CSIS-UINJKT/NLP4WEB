@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Tue Nov 07 17:15:32 CET 2017 */
+/* First created by JCasGen Tue Nov 14 13:00:35 CET 2017 */
 package de.unihamburg.informatik.nlp4web.tutorial.tut3.type;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,15 +11,15 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Tue Nov 14 12:57:16 CET 2017
- * XML source: /home/alvin/Documents/CSIS-UINJKT/NLP4WEB/Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/type/BIToken.xml
+ * Updated by JCasGen Tue Nov 14 13:00:35 CET 2017
+ * XML source: /home/alvin/Documents/CSIS-UINJKT/NLP4WEB/Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/type/Sentence.xml
  * @generated */
-public class BIToken extends Annotation {
+public class Sentence extends Annotation {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(BIToken.class);
+  public final static int typeIndexID = JCasRegistry.register(Sentence.class);
   /** @generated
    * @ordered 
    */
@@ -33,14 +33,14 @@ public class BIToken extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected BIToken() {/* intentionally empty block */}
+  protected Sentence() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public BIToken(int addr, TOP_Type type) {
+  public Sentence(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -48,7 +48,7 @@ public class BIToken extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public BIToken(JCas jcas) {
+  public Sentence(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -58,7 +58,7 @@ public class BIToken extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public BIToken(JCas jcas, int begin, int end) {
+  public Sentence(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);

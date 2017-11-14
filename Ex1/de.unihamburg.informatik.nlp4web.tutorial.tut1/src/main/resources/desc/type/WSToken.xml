@@ -1,5 +1,14 @@
-Unstaged changes after reset:
-M	Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/type/BIToken.xml
-M	Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/type/WSToken.xml
-D	Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/types/BIToken.xml
-D	Ex1/de.unihamburg.informatik.nlp4web.tutorial.tut1/src/main/resources/desc/types/WSToken.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>WSToken</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>de.unihamburg.informatik.nlp4web.tutorial.tut3.type.WSToken</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

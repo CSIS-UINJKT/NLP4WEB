@@ -9,7 +9,7 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Nov 07 17:15:40 CET 2017
+ * Updated by JCasGen Tue Nov 14 12:57:16 CET 2017
  * @generated */
 public class BIToken_Type extends Annotation_Type {
   /** @generated */
