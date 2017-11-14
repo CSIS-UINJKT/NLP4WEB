@@ -1,5 +1,6 @@
 package de.unihamburg.informatik.nlp4web.tutorial.tut3.annotator;
 
+import java.util.Locale;
 import java.util.StringTokenizer;
 import java.text.BreakIterator;
 
@@ -29,15 +30,22 @@ public class TokenizerExample {
 	// still remain?
 	private static void BreakIteratorTokenize(String document) {
 //		Locale locale = Locale.UK;
-		BreakIterator bk = BreakIterator.getWordInstance();
-	    int start = bk.first();
-	    int end = bk.next();
-	    int totalLen = 0;
-		bk.setText(document);
-//		while(bk.hasMoreTokens()){
+//		BreakIterator bk = BreakIterator.getWordInstance();
+//	    int start = bk.first();
+//	    int end = bk.next();
+//	    int totalLen = 0;
+//		bk.setText(document);
+////		while(bk.hasMoreTokens()){
+//		
+//			System.out.println(bk.first());
+////		}
 		
-			System.out.println(bk.first());
-//		}
+		BreakIterator bi = BreakIterator.getWordInstance(Locale.ENGLISH);
+		bi.setText(document);
+		int start = bi.first();
+		for (int end = bi.next(); end != BreakIterator.DONE; start = end, end = bi.next()) {
+			System.out.println(document.substring(start, end));
+		}
 		
 	}
 }
