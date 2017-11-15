@@ -20,6 +20,7 @@ public class Pipeline3 {
 		CollectionReader reader = createReader(DummyReader.class);
 
 		AnalysisEngine seg = createEngine(BreakIteratorTokenizer.class);
+//		AnalysisEngine seg = createEngine(WhitespaceTokenizer.class);
 
 		AnalysisEngine writer = createEngine(DummyWriter.class);
 
