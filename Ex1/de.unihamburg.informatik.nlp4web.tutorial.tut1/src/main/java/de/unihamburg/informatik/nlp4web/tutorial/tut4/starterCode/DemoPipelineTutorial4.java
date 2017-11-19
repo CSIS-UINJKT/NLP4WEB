@@ -41,9 +41,9 @@ public class DemoPipelineTutorial4
         AnalysisEngine lem = createEngine(StanfordLemmatizer.class);
         
         AnalysisEngine pos = createEngine(StanfordPosTagger.class);
-        // StanfordParser is kind of heavy. You might want to increase the heap space.
-        // e.g. add -Xmx1500m to the VM arguments in the Run Configurations arguments tab.
-        // Also better start with not too much text to process.
+//         StanfordParser is kind of heavy. You might want to increase the heap space.
+//         e.g. add -Xmx1500m to the VM arguments in the Run Configurations arguments tab.
+//         Also better start with not too much text to process.
     	AnalysisEngine parse = createEngine(StanfordParser.class);
     	
     	AnalysisEngine posWriter = createEngine(POSWriter.class);
