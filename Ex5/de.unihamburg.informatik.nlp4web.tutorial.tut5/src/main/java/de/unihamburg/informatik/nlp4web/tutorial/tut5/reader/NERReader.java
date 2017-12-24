@@ -1,3 +1,20 @@
+/*******************************************************************************
+ * Copyright 2014
+ * FG Language Technology
+ * Technische Universität Darmstadt
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
 package de.unihamburg.informatik.nlp4web.tutorial.tut5.reader;
 
 import org.apache.uima.UimaContext;
@@ -10,6 +27,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Level;
 import org.apache.uima.util.Logger;
 
+import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
@@ -42,7 +60,8 @@ public class NERReader extends JCasAnnotator_ImplBase {
 		String[] tokens = tbText.split("(\r\n|\n)");
 		Sentence sentence = null;
 		int idx = 0;
-		Token token = null;;
+		Token token = null;
+		NamedEntity NamedEntityTag;
 		String NamedEntity;
 		boolean initSentence = false;
 		StringBuffer docText = new StringBuffer();
@@ -68,7 +87,35 @@ public class NERReader extends JCasAnnotator_ImplBase {
 
 				docText.append(word);
 				sentenceSb.append(word + " ");
+
+				token = new Token(docView, idx, idx + word.length());
+				NamedEntityTag = new NamedEntity(docView, idx, idx + word.length());
+
+				docText.append(" ");
+				idx++;
+
+				// start new sentence
+				if (initSentence) {
+					sentence = new Sentence(docView);
+					sentence.setBegin(token.getBegin());
+					initSentence = false;
+				}
+				// increment actual index of text
+				idx += word.length();
+				NamedEntityTag.setValue(NamedEntity);
+
+				NamedEntityTag.addToIndexes();
+				token.addToIndexes();
+
+				logger.log(Level.FINE, "Token: [" + docText.substring(token.getBegin(), token.getEnd()) + "]"
+						+ token.getBegin() + "\t" + token.getEnd());
+				logger.log(Level.FINE,
+						"NamedEnity: [" + docText.substring(NamedEntityTag.getBegin(), NamedEntityTag.getEnd()) + "]"
+								+ NamedEntityTag.getBegin() + "\t" + NamedEntityTag.getEnd());
 			}
+		}
+		if ((sentence != null) && (token != null)) {
+			terminateSentence(sentence, token, docText);
 		}
 
 		docView.setSofaDataString(docText.toString(), "text/plain");
